@@ -1,0 +1,20 @@
+{
+  "name": "saudi-security-platform",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:web:open": "npm --workspace apps/web run dev & node -e \"setTimeout(() => require('open')('http://localhost:3000'), 3000)\"",
+    "dev:api": "npm --workspace apps/api run dev",
+    "build:web": "npm --workspace apps/web run build",
+    "build:api": "npm --workspace apps/api run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "open": "^11.0.0"
+  }
+}
